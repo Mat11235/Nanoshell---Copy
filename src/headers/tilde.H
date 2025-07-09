@@ -686,6 +686,11 @@ class nanosphere{
 // 				GG = set_GG(G, tau2);
 				pip = 1.;
 				}
+			else if (t*1.e+12/omep < tpump && pip ==0) {
+				tildeN =0;
+// 				GG = set_GG(G, tau2);
+				pip = 0;
+				}
 		    if (ns == 1) {
 				po  = numerical_output(E0, q, p0);
 				N   = Runge_Kutta_mono_4 (N, -1./tau1, tildeN/tau1+imag(q[0]*conj(po)), dt);
