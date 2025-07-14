@@ -686,13 +686,13 @@ class nanosphere{
 
 		//Introduccion de una onda cuadrada para el bombeo
 		double t_ps    = t * 1.e+12 / omep;  // tiempo actual en ps
-		
+		cout << "entrada" << endl;
 		if (t_ps >= tpump) {
 		    // onda cuadrada: tildeN = 1 durante el pulso, luego 0
+		cout << "entrada if" << endl;
 		    double local_t = fmod(t_ps - tpump, Tperiod);
 		    if (local_t < duty * Tperiod) {
 		        tildeN = 1.;  // bomba encendida
-			cout << "entrada" << endl;
 		    } else {
 		        tildeN = 0;  // bomba apagada	
 		    }
