@@ -692,9 +692,9 @@ class nanosphere{
 		    double local_t = fmod(t_ps - tpump, Tperiod);
 		    if (local_t < duty * Tperiod) {
 		        tildeN = 1.;  // bomba encendida
+			cout << "entrada" << endl;
 		    } else {
-		        tildeN = 0;  // bomba apagada
-			cout << "apagado" << endl;	
+		        tildeN = 0;  // bomba apagada	
 		    }
 		} else {
 		    tildeN = 0;  // antes de tpump, no hay bomba
