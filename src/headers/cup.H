@@ -679,27 +679,14 @@ class nanosphere{
 	    
 		omeR = Rabi_frec(G, tau2, E0);
 		int i=0;
-		double Tperiod = 50;    // periodo total de la onda (en ps)
-		double duty    = 0.5;     // ciclo de trabajo (50% encendido)
 		while (i<=Nt){// && (fabs(norm(dip)-dnormem)> 1.e-20 || t*1.e+12/omep<12*tpump)){
 		    t=i*dt;
 		    i++;
-
-		//Introduccion de una onda cuadrada para el bombeo
-		double t_ps    = t * 1.e+12 / omep;  // tiempo actual en ps
-
-		if (t_ps >= tpump) {
-		    // onda cuadrada: tildeN = 1 durante el pulso, luego 0
-		cout << "entrada if" << endl;
-		    double local_t = fmod(t_ps - tpump, Tperiod);
-		    if (local_t < duty * Tperiod) {
-		        tildeN = 1.;  // bomba encendida
-		    } else {
-		        tildeN = 0;  // bomba apagada	
-		    }
-		} else {
-		    tildeN = 0;  // antes de tpump, no hay bomba
-		}
+			if (t*1.e+12/omep >= tpump && pip == 0) {
+			    tildeN = 1.;
+			    std::cout << "encendido" << std::endl;
+			    pip = 1.;
+			}
 		//Aqui termina el cambio
 		    if (ns == 1) {
 				po  = numerical_output(E0, q, p0);
