@@ -678,7 +678,7 @@ class nanosphere{
 	    
 		omeR = Rabi_frec(G, tau2, E0);
 		int i=0;
-		double Tperiod = 50;    // periodo total de la onda (en ps)
+		double Tperiod = 90;    // periodo total de la onda (en ps)
 		double duty    = 0.5;     // ciclo de trabajo (50% encendido)
 		while (i<=Nt){// && (fabs(norm(dip)-dnormem)> 1.e-20 || t*1.e+12/omep<12*tpump)){
 		    t=i*dt;
