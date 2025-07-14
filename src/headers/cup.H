@@ -607,7 +607,7 @@ class nanosphere{
 		dyna<<"# ome = "<<omeeV<<" eV"<<std::endl;
 		dyna<<"# a "<<mdl<<" model was used for "<<mtl<<std::endl;
 		dyna<<"# ------------- "<<std::endl;
-		dyna<<"# t (ps)\treal(alph)\timag(alph)\treal(dip)\timag(dip)"<<std::endl;
+		dyna<<"# t (ps)\treal(alph)\timag(alph)\tN\treal(dip)\timag(dip)"<<std::endl;
 		dyna<<"#"<<std::endl;
 
 		fnct<<"# * NUMERICAL * "<<std::endl;
@@ -619,7 +619,7 @@ class nanosphere{
 		fnct<<"# ome = "<<omeeV<<" eV"<<std::endl;
 		fnct<<"# a "<<mdl<<" model was used for "<<mtl<<std::endl;
 		fnct<<"# ------------- "<<std::endl;
-		fnct<<"# t (ps)\treal(q0)\timag(q0)\treal(q1)\timag(q1)\treal(q2)\timag(q2)"<<std::endl;
+		fnct<<"# t (ps)\treal(q0)\timag(q0)\treal(q1)\timag(q1)\treal(q2)\timag(q2)\tN"<<std::endl;
 		fnct<<"#"<<std::endl;
 
 		omep = eV2j*Ome_p*2.*M_PI/h;// omep = eV2j*Ome_p/h;  //converto in Hz
