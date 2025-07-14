@@ -1,4 +1,4 @@
-_
+
 void squarewave(double* tildeN, double Tperiod, double duty, double t_ps, double tpump){
       if (t_ps >= tpump) {
 		    // onda cuadrada: tildeN = 1 durante el pulso, luego 0
