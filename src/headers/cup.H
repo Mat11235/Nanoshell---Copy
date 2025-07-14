@@ -555,7 +555,6 @@ class nanosphere{
 	    }
 	    
 	    std::complex<double> numerical(char* mdl , char* mtl ,char* hst, double E0, double omeeV, double T, double tpump, char* sol=0, double rho=0){
-		std::cout << "entrada" << std::endl;
 		double eps_b, eps_s, ome, dt, dnormem=1.e20, dnavr=0, dnavrm=1.e20;
 		std::vector<std::complex<double>> wave;
 		int ns=0, wb=0.;
@@ -683,7 +682,7 @@ class nanosphere{
 		    t=i*dt;
 		    i++;
 			if (t*1.e+12/omep >= tpump && pip == 0) {
-			    tildeN = 1.;
+			    tildeN = 0;
 			    std::cout << "encendido" << std::endl;
 			    pip = 1.;
 			}
