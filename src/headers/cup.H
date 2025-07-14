@@ -678,7 +678,7 @@ class nanosphere{
 		tildeN = 0;
 	    
 		omeR = Rabi_frec(G, tau2, E0);
-		int i=0;
+		int i=0, pip=0;;
 		while (i<=Nt){// && (fabs(norm(dip)-dnormem)> 1.e-20 || t*1.e+12/omep<12*tpump)){
 		    t=i*dt;
 		    i++;
