@@ -703,7 +703,7 @@ class nanosphere{
 		    if (ns == 1) {
 				po  = numerical_output(E0, q, p0);
 				N   = Runge_Kutta_mono_4 (N, -1./tau1, tildeN/tau1+imag(q[0]*conj(po)), dt);
-				} else N = 0;
+				} else N = 1;
 		    A   = coefficients(OmeH, OmeP, GG*N, GamP, p0, p1, p2); 
 		    B   = inhomogeneous(GG*N, GamP, E0, p0, p1, p2);
 		    q   = Runge_Kutta_4 (q, A, B, dt);
