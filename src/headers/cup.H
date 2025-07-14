@@ -555,6 +555,7 @@ class nanosphere{
 	    }
 	    
 	    std::complex<double> numerical(char* mdl , char* mtl ,char* hst, double E0, double omeeV, double T, double tpump, char* sol=0, double rho=0){
+		cout << "entrada" << endl;
 		double eps_b, eps_s, ome, dt, dnormem=1.e20, dnavr=0, dnavrm=1.e20;
 		std::vector<std::complex<double>> wave;
 		int ns=0, wb=0.;
@@ -686,7 +687,7 @@ class nanosphere{
 
 		//Introduccion de una onda cuadrada para el bombeo
 		double t_ps    = t * 1.e+12 / omep;  // tiempo actual en ps
-		cout << "entrada" << endl;
+
 		if (t_ps >= tpump) {
 		    // onda cuadrada: tildeN = 1 durante el pulso, luego 0
 		cout << "entrada if" << endl;
