@@ -8,7 +8,7 @@ void squarewave(double* tildeN, double Tperiod, double duty, double t_ps, double
 		    if (local_t < duty * Tperiod) {
 		        *tildeN = 1.;  // bomba encendida
 		    } else {
-		        *tildeN = 0;  // bomba apagada
+		        *tildeN = -1;  // bomba apagada
 		    }
 		} else {
 		    *tildeN = 0;  // antes de tpump, no hay bomba
