@@ -680,23 +680,19 @@ class nanosphere{
 		omeR = Rabi_frec(G, tau2, E0);
 		int i=0;
 
-// These variables just work on specific functions
+		// These variables just work on specific functions
 		int pip = 0;
+		//double Tperiod = 40;    // periodo total de la onda (en ps)
+		//double duty    = 0.5;     // ciclo de trabajo (50% encendido)  
 
 		
 		while (i<=Nt){// && (fabs(norm(dip)-dnormem)> 1.e-20 || t*1.e+12/omep<12*tpump)){
 		    t=i*dt;
 		    i++;
 
-		//Introduccion de una onda cuadrada para el bombeo
-		double t_ps    = t * 1.e+12 / omep;  // tiempo actual en ps
-
-			if(t_ps >= tpump && pip ==0) {
-			tildeN = 0;
-		// 	GG = set_GG(G, tau2);
-			pip = 1;
-		}
-
+			//Introduccion de una onda cuadrada para el bombeo
+			double t_ps    = t * 1.e+12 / omep;  // tiempo actual en ps
+			dflt(&tildeN, t_ps, tpump, &pip);
 
 		//Aqui termina el cambio
 
