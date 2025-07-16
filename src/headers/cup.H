@@ -692,7 +692,7 @@ class nanosphere{
 		//Introduccion de una onda cuadrada para el bombeo
 		double t_ps    = t * 1.e+12 / omep;  // tiempo actual en ps
 
-		default(&tildeN, t_ps, tpump, &pip);
+		dflt(&tildeN, t_ps, tpump, &pip);
 		//squarewave(&tildeN, Tperiod, duty, t_ps, tpump);
 		//sinusoidalwave(&tildeN, Tperiod, t_ps, tpump);
 
