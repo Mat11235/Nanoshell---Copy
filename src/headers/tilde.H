@@ -1,7 +1,7 @@
 
 #include <cmath>
 
-void default(double* tildeN, double t_ps, double tpump, int* pip){
+void dflt(double* tildeN, double t_ps, double tpump, int* pip){
 	if(t_ps >= tpump && *pip ==0) {
 		*tildeN = 1.;
 	// 	GG = set_GG(G, tau2);
