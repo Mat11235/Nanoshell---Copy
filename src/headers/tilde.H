@@ -1,6 +1,14 @@
 
 #include <cmath>
 
+void default(double* tildeN, double t_ps, double tpump, int* pip){
+	if(t_ps >= tpump && *pip ==0) {
+		*tildeN = 1.;
+	// 	GG = set_GG(G, tau2);
+		*pip = 1;
+	}
+}
+
 void squarewave(double* tildeN, double Tperiod, double duty, double t_ps, double tpump){
 	if (t_ps >= tpump) {
 		    // onda cuadrada: tildeN = 1 durante el pulso, luego 0
@@ -8,7 +16,7 @@ void squarewave(double* tildeN, double Tperiod, double duty, double t_ps, double
 		    if (local_t < duty * Tperiod) {
 		        *tildeN = 1.;  // bomba encendida
 		    } else {
-		        *tildeN = -1;  // bomba apagada
+		        *tildeN = 0;  // bomba apagada
 		    }
 		} else {
 		    *tildeN = 0;  // antes de tpump, no hay bomba
