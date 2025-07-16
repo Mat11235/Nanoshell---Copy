@@ -693,7 +693,7 @@ class nanosphere{
 		double t_ps    = t * 1.e+12 / omep;  // tiempo actual en ps
 
 			if(t_ps >= tpump && pip ==0) {
-			tildeN = 1.;
+			tildeN = 0;
 		// 	GG = set_GG(G, tau2);
 			pip = 1;
 		}
