@@ -682,9 +682,8 @@ class nanosphere{
 
 		// These variables just work on specific functions
 		//int pip = 0;
-		double Tperiod = 40;    // periodo total de la onda (en ps)
-		double duty    = 0.5;     // ciclo de trabajo (50% encendido)  
-
+		double Tperiod = 40;
+		double duty = 0.5;
 		
 		while (i<=Nt){// && (fabs(norm(dip)-dnormem)> 1.e-20 || t*1.e+12/omep<12*tpump)){
 		    t=i*dt;
@@ -693,7 +692,7 @@ class nanosphere{
 			//Introduccion de una onda cuadrada para el bombeo
 			double t_ps    = t * 1.e+12 / omep;  // tiempo actual en ps
 			//dflt(&tildeN, t_ps, tpump, &pip);
-			squarewave(&tildeN, Tperiod, duty, t_ps, tpump);
+			squarewave(&tildeN, Tperiod, duty, t_ps,tpump);
 
 		//Aqui termina el cambio
 
