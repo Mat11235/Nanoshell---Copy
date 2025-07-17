@@ -1,6 +1,5 @@
 
 #include <cmath>
-#include "cup.H"
 
 void dflt(double* tildeN, double t_ps, double tpump, int* pip){
 	if(t_ps >= tpump && *pip ==0) {
