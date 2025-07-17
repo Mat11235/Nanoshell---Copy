@@ -23,17 +23,17 @@ void squarewave(double* tildeN, double Tperiod, double duty, double t_ps, double
 		}
 }
 
-void sinusoidalwave(double* tildeN, double Tperiod, double t_ps, double tpump, std::complex<double>* GG, double G, double tau2){
-	if (t_ps >= tpump) {
-	    *tildeN = 0.5 * (1. + sin(2. * M_PI * (t_ps - tpump) / Tperiod));
-		if(*tildeN > 0.9){
-			*GG = nanosphere.set_GG(-0.14, tau2);
-		} else {
-			*GG = nanosphere.set_GG(G, tau2);
-		}
-		
-	} else {
-	    *tildeN = 0.0;
-	}
-}
+//void sinusoidalwave(double* tildeN, double Tperiod, double t_ps, double tpump, std::complex<double>* GG, double G, double tau2){
+//	if (t_ps >= tpump) {
+//	    *tildeN = 0.5 * (1. + sin(2. * M_PI * (t_ps - tpump) / Tperiod));
+//		if(*tildeN > 0.9){
+//			*GG = nanosphere.set_GG(-0.14, tau2);
+//		} else {
+//			*GG = nanosphere.set_GG(G, tau2);
+//		}
+//		
+//	} else {
+//	    *tildeN = 0.0;
+//	}
+//}
 
