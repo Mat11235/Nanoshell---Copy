@@ -699,9 +699,9 @@ class nanosphere{
 		if (t_ps >= tpump) {
 		    tildeN = 0.5 * (1. + sin(2. * M_PI * (t_ps - tpump) / Tperiod));
 			if(tildeN > 0.9){
-				GG = nanosphere.set_GG(-0.14, tau2);
+				GG = set_GG(-0.14, tau2);
 			} else {
-				GG = nanosphere.set_GG(G, tau2);
+				GG = set_GG(G, tau2);
 			}
 			
 		} else {
