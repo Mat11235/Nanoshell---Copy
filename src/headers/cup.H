@@ -17,6 +17,7 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include <cmath>
 #include <complex>
 #include <math.h>
 #include "tilde.H"
@@ -683,7 +684,7 @@ class nanosphere{
 		// These variables just work on specific functions
 		//int pip = 0;
 		double Tperiod = 40;
-		double duty = 0.5;
+		//double duty = 0.5;
 		
 		while (i<=Nt){// && (fabs(norm(dip)-dnormem)> 1.e-20 || t*1.e+12/omep<12*tpump)){
 		    t=i*dt;
@@ -693,7 +694,20 @@ class nanosphere{
 			double t_ps    = t * 1.e+12 / omep;  // tiempo actual en ps
 			//dflt(&tildeN, t_ps, tpump, &pip);
 			//squarewave(&tildeN, Tperiod, duty, t_ps,tpump);
-			sinusoidalwave(&tildeN, Tperiod, t_ps, tpump, &GG, G, tau2);
+			//sinusoidalwave(&tildeN, Tperiod, t_ps, tpump, &GG, G, tau2);
+
+		if (t_ps >= tpump) {
+		    tildeN = 0.5 * (1. + sin(2. * M_PI * (t_ps - tpump) / Tperiod));
+			if(tildeN > 0.9){
+				GG = nanosphere.set_GG(-0.14, tau2);
+			} else {
+				GG = nanosphere.set_GG(G, tau2);
+			}
+			
+		} else {
+		    tildeN = 0.0;
+		}
+
 
 		//Aqui termina el cambio
 
