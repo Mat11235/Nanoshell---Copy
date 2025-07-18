@@ -89,10 +89,10 @@ class nanosphere{
 			    double local_t = fmod(t_ps - tpump, Tperiod);
 			    if (local_t < duty * Tperiod) {
 			        *tildeN = 1.;  // bomba encendida
-				*GG = nanosphere.set_GG(-0.14, tau2);
+				*GG = set_GG(-0.14, tau2);
 			    } else {
 			        *tildeN = 0;  // bomba apagada
-				*GG = nanosphere.set_GG(G, tau2);
+				*GG = set_GG(G, tau2);
 			    }
 			} else {
 			    *tildeN = 0;  // antes de tpump, no hay bomba
@@ -103,9 +103,9 @@ class nanosphere{
 		if (t_ps >= tpump) {
 		    *tildeN = 0.5 * (1. + sin(2. * M_PI * (t_ps - tpump) / Tperiod));
 			if(*tildeN > 0.9){
-				*GG = nanosphere.set_GG(-0.14, tau2);
+				*GG = set_GG(-0.14, tau2);
 			} else {
-				*GG = nanosphere.set_GG(G, tau2);
+				*GG = set_GG(G, tau2);
 			}	
 		} else {
 		    *tildeN = 0.0;
@@ -732,7 +732,7 @@ class nanosphere{
 			//Introduccion de una onda cuadrada para el bombeo
 			double t_ps    = t * 1.e+12 / omep;  // tiempo actual en ps
 			//dflt(&tildeN, t_ps, tpump, &pip);
-			//squarewave(&tildeN, Tperiod, duty, t_ps,tpump, &GG, G, tau2));
+			squarewave(&tildeN, Tperiod, duty, t_ps,tpump, &GG, G, tau2));
 			//sinusoidalwave(&tildeN, Tperiod, t_ps, tpump, &GG, G, tau2);
 
 
