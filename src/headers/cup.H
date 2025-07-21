@@ -101,7 +101,7 @@ class nanosphere{
 	
 	void sinusoidalwave(double* tildeN, double Tperiod, double t_ps, std::complex<double>* GG, double G, double tau2){
 	    *tildeN = 0.5 * (1. + sin(2. * M_PI * t_ps / Tperiod));
-		if(*tildeN > 0.7){
+		if(*tildeN > 0.6){
 			*GG = set_GG(-0.14, tau2);
 		} else {
 			*GG = set_GG(G, tau2);
