@@ -723,7 +723,7 @@ class nanosphere{
 		// These variables just work on specific functions
 		//int pip = 0;
 		double Tperiod = 50;
-		double duty = 0.5;
+		//double duty = 0.5;
 		
 		while (i<=Nt){// && (fabs(norm(dip)-dnormem)> 1.e-20 || t*1.e+12/omep<12*tpump)){
 		    t=i*dt;
