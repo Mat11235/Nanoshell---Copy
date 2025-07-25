@@ -20,7 +20,7 @@
 #include <cmath>
 #include <complex>
 #include <math.h>
-#include "Ntilde.h"
+#include "Ntilde.H"
 #include <stdio.h>
 #include <string.h>
 #include <gsl/gsl_errno.h>
