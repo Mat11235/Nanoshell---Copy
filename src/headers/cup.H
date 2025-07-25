@@ -20,6 +20,7 @@
 #include <cmath>
 #include <complex>
 #include <math.h>
+#include "Ntilde.h"
 #include <stdio.h>
 #include <string.h>
 #include <gsl/gsl_errno.h>
@@ -73,8 +74,6 @@ class nanosphere{
 	  img = std::complex<double> (0., 1.);
 	  pi = acos(-1.);
 	  }
-
-
 
 	void set_metal(const char* mtl, const char* mdl, int sel=0){
 	  /** Ome_p [THz]	Plasma frequency (gold)		**/
